@@ -8,9 +8,27 @@ public class SortingAlgorithmDriver
 
     public static void main(String[] args)
     {
+        int[] array = new int[] {2, 5, 8, 4, 7, 9, 6, 5, 9, 4, 3, 1};
         SortingAlgorithm algo = chooseAlgo();
+        
+        System.out.println();
 
-        algo.sort();
+        displayArray(array);
+
+        System.out.println("[++] Sorting Array...");
+        algo.sort(array);
+
+        displayArray(array);
+    }
+
+    private static void displayArray(int[] array)
+    {
+        System.out.print("[>>] Contents of Array: ");
+
+        System.out.print("{");
+        for(int n : array)
+            System.out.printf("%s, ", n);
+        System.out.print("\b\b}\n");
     }
 
     private static SortingAlgorithm chooseAlgo()
