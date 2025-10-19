@@ -1,6 +1,9 @@
 package assignment04PartA;
 
-public class SelectionSort implements SortingAlgorithm
+public class SelectionSort extends SortingAlgorithm
 {
-
+    public void sort()
+    {
+        // TODO: Implement Sorting Algorithm
+    }
 }

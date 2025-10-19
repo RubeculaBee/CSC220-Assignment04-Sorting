@@ -1,6 +1,6 @@
 package assignment04PartA;
 
-public interface SortingAlgorithm
+public abstract class SortingAlgorithm
 {
-    public void sort();
+    public abstract void sort();
 }
