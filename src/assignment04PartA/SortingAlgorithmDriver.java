@@ -8,6 +8,15 @@ public class SortingAlgorithmDriver
 
     public static void main(String[] args)
     {
+        while(true)
+        {
+            System.out.println("-".repeat(64));
+            runTest();
+        }
+    }
+
+    private static void runTest()
+    {
         int[] array = new int[] {2, 5, 8, 4, 7, 9, 6, 5, 9, 4, 3, 1};
         SortingAlgorithm algo = chooseAlgo();
         
