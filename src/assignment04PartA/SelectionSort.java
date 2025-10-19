@@ -22,14 +22,4 @@ public class SelectionSort extends SortingAlgorithm
             displayArray(array);
         }
     }
-
-    // Swaps the data in indexes i and j of the given array
-    private void swap(int[] array, int i, int j)
-    {
-        int temp = array[i];
-
-        array[i] = array[j];
-
-        array[j] = temp;
-    }
 }
