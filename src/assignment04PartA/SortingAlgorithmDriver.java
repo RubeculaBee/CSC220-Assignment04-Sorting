@@ -13,22 +13,9 @@ public class SortingAlgorithmDriver
         
         System.out.println();
 
-        displayArray(array);
-
+        SortingAlgorithm.displayArray(array);
         System.out.println("[++] Sorting Array...");
         algo.sort(array);
-
-        displayArray(array);
-    }
-
-    private static void displayArray(int[] array)
-    {
-        System.out.print("[>>] Contents of Array: ");
-
-        System.out.print("{");
-        for(int n : array)
-            System.out.printf("%s, ", n);
-        System.out.print("\b\b}\n");
     }
 
     private static SortingAlgorithm chooseAlgo()

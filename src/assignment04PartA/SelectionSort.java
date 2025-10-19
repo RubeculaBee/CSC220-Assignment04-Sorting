@@ -18,6 +18,8 @@ public class SelectionSort extends SortingAlgorithm
 
             // Swap smallest with the current index
             swap(array, i, indexOfLeast);
+            
+            displayArray(array);
         }
     }
 
