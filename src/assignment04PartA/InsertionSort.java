@@ -1,6 +1,6 @@
 package assignment04PartA;
 
-public class InsertionSort
+public class InsertionSort implements SortingAlgorithm
 {
 
 }

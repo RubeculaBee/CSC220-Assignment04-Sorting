@@ -1,6 +1,6 @@
 package assignment04PartA;
 
-public class SelectionSort 
+public class SelectionSort implements SortingAlgorithm
 {
 
 }

@@ -1,6 +1,6 @@
 package assignment04PartA;
 
-public class ShellSort 
+public class ShellSort implements SortingAlgorithm
 {
 
 }
