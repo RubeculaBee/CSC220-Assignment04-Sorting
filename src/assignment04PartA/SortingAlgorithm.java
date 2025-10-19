@@ -6,8 +6,6 @@ public abstract class SortingAlgorithm
 
     static void displayArray(int[] array)
     {
-        System.out.print("[>>] Contents of Array: ");
-
         System.out.print("{");
         for(int n : array)
             System.out.printf("%s, ", n);

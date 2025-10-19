@@ -11,11 +11,14 @@ public class SortingAlgorithmDriver
         int[] array = new int[] {2, 5, 8, 4, 7, 9, 6, 5, 9, 4, 3, 1};
         SortingAlgorithm algo = chooseAlgo();
         
-        System.out.println();
-
+        System.out.print("\n[>>] Initial Contents of Array: ");
         SortingAlgorithm.displayArray(array);
-        System.out.println("[++] Sorting Array...");
+
+        System.out.println("\n[++] Sorting Array...");
         algo.sort(array);
+
+        System.out.print("\n[>>] Final Contents of Array: ");
+        SortingAlgorithm.displayArray(array);
     }
 
     private static SortingAlgorithm chooseAlgo()
@@ -24,7 +27,7 @@ public class SortingAlgorithmDriver
         
         System.out.println("[>>] Which Algorithm would you like to use?");
         for(int i = 0; i < options.length; i++)
-            System.out.printf("[>>] %d: %s\n", i+1, options[i]);
+            System.out.printf("[##] %d: %s\n", i+1, options[i]);
         
         System.out.print("[<<] ");
 
