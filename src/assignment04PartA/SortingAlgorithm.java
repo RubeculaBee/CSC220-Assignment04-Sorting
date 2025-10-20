@@ -110,7 +110,21 @@ final class ShellSort extends SortingAlgorithm
 {
     public void sort(int[] array)
     {
-        // TODO: Implement Sorting Algorithm
+        for(int n = array.length / 2; n > 1; n/=2)
+            for(int i = 0; i < n; i++)
+                for(int j = n+i; j < array.length; j+=n)
+                {
+                    for(int k = j; k > i; k -= n)
+                        if(array[k] < array[k-n])
+                            swap(array, k, k-n);
+                        else
+                            break;
+                        
+                    displayArray(array);
+                }
+        
+        System.out.println("[++] Beginning Standard Insertion Sort");
+        new InsertionSort().sort(array);
     }
 }
 
