@@ -54,10 +54,13 @@ public class SortingAlgorithmDriver
         SortingAlgorithm.displayArray(array);
 
         System.out.println("\n[++] Sorting Array...");
+        long startTime = System.currentTimeMillis();
         algo.sort(array);
+        long endTime = System.currentTimeMillis();
 
         System.out.print("\n[>>] Final Contents of Array: ");
         SortingAlgorithm.displayArray(array);
+        System.out.printf("[>>] Run Time: %5dms\n", endTime-startTime);
     }
 
     /**
