@@ -34,7 +34,7 @@ public class SortingAlgorithmDriver
      */
     private static void runTest()
     {
-        int[] array = new int[] {2, 5, 8, 4, 7, 9, 6, 5, 9, 4, 3, 1};
+        int[] array = makeArray(1000);
         
         SortingAlgorithm algo;
         while(true)
@@ -61,6 +61,20 @@ public class SortingAlgorithmDriver
         System.out.print("\n[>>] Final Contents of Array: ");
         SortingAlgorithm.displayArray(array);
         System.out.printf("[>>] Run Time: %5dms\n", endTime-startTime);
+    }
+
+    /**
+     * @param n the length of the new array
+     * @return an integer array of length n with random integers
+     */
+    private static int[] makeArray(int n)
+    {
+        int[] array = new int[n];
+
+        for(int i = 0; i < array.length; i++)
+            array[i] = (int) (Math.random() * 100);
+
+        return array;
     }
 
     /**
