@@ -4,6 +4,18 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/*
+ * File: SortingAlgorithmDriver.java
+ * By:   Robin Lane
+ * Date: 10-19-25
+ * 
+ * Description: Allows the user to pick a sorting algorithm from the following choices:
+ *              [1] Selection Sort
+ *              [2] Insertion Sort
+ *              [3] Shell Sort
+ *              Then sorts a predefined array using that sorting algorithm.
+ */
+
 public class SortingAlgorithmDriver
 {
     static Scanner input = new Scanner(System.in);
