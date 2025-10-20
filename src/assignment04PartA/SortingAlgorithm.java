@@ -82,7 +82,23 @@ final class InsertionSort extends SortingAlgorithm
 {
     public void sort(int[] array)
     {
-        // TODO: Implement Sorting Algorithm
+        // Check the entire array, including the last item which might need to be moved back.
+        for(int i = 1; i < array.length; i++)
+        {
+            // Repeat until item has been moved back to 0, or the loop breaks
+            for(int j = i; j > 0; j--)
+            {
+                // Is the current item smaller than the one behind it?
+                if(array[j] < array[j-1])
+                    // If yes, swap it with the one behind it
+                    swap(array, j, j-1);
+                else
+                    // If no, stop moving it back
+                    break;
+            }
+
+            displayArray(array);
+        }
     }
 }
 
