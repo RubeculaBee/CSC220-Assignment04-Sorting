@@ -1,13 +1,13 @@
 package assignment04PartA;
 
-/**
- * * File: SortingAlgorithm.java
- * * By:   Robin Lane
- * * Date: 10-19-25
+/*
+ * File: SortingAlgorithm.java
+ * By:   Robin Lane
+ * Date: 10-19-25
  * 
- * * Description: 3 Sorting algorithms (Selection, Insertion, and Shell sort)
- * *              used for Part A of this assignment. Designed to only work with
- * *              ints, as that is all that was requested by the client.
+ * Description: 3 Sorting algorithms (Selection, Insertion, and Shell sort)
+ *              used for Part A of this assignment. Designed to only work with
+ *              ints, as that is all that was requested by the client.
  */
 
 
