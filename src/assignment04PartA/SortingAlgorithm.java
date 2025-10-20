@@ -110,7 +110,9 @@ final class ShellSort extends SortingAlgorithm
 {
     public void sort(int[] array)
     {
-        for(int n = array.length / 2; n > 1; n/=2)
+        final int shrinkBy = 10;
+
+        for(int n = array.length / shrinkBy; n > 1; n/=shrinkBy)
             for(int i = 0; i < n; i++)
                 for(int j = n+i; j < array.length; j+=n)
                 {
