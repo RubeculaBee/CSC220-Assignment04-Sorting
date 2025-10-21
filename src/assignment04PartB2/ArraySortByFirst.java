@@ -14,6 +14,13 @@ public class ArraySortByFirst
 
 	public static void display(int data[][])
 	{
+		for(int[] row : data)
+		{
+			System.out.print("   ");
+			for(int entry : row)
+				System.out.printf("%3d", entry);
+			System.out.print("\n");
+		}
 	} 
 
 	//
