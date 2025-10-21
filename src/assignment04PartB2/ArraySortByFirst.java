@@ -10,6 +10,17 @@ public class ArraySortByFirst
 {
 	public static void sortByFirst(int data[][])
 	{
+		// Insertion Sort. Simple implementation, and works well enough for the needs of this program.
+		for(int i = 0; i < data.length; i++)
+			for(int j = i; j > 0; j--)
+				if(data[j][0] < data[j-1][0])
+				{
+					int[] temp = data[j];
+					data[j] = data[j-1];
+					data[j-1] = temp;
+				} 
+				else
+					break;
 	}
 
 	public static void display(int data[][])
