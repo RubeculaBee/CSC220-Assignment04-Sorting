@@ -50,9 +50,13 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
         if(isEmpty())
             throw new EmptyQueueException();
         
-        // TODO Auto-generated method stub
+        DoublyLinkedNode currentNode = firstnode;
+        while(currentNode.next != null)
+            currentNode = currentNode.next;
 
-        return null;
+        currentNode.prev.next = null;
+
+        return currentNode.data;
     }
 
     @Override
@@ -61,9 +65,13 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
         if(isEmpty())
             throw new EmptyQueueException();
         
-        // TODO Auto-generated method stub
+        DoublyLinkedNode currentNode = firstnode;
+        while(currentNode.prev != null)
+            currentNode = currentNode.prev;
 
-        return null;
+        currentNode.next.prev = null;
+
+        return currentNode.data;
     }
 
     @Override
@@ -72,9 +80,11 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
         if(isEmpty())
             throw new EmptyQueueException();
         
-        // TODO Auto-generated method stub
+        DoublyLinkedNode currentNode = firstnode;
+        while(currentNode.next != null)
+            currentNode = currentNode.next;
 
-        return null;
+        return currentNode.data;
     }
 
     @Override
@@ -83,9 +93,11 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
         if(isEmpty())
             throw new EmptyQueueException();
         
-        // TODO Auto-generated method stub
+        DoublyLinkedNode currentNode = firstnode;
+        while(currentNode.prev != null)
+            currentNode = currentNode.prev;
 
-        return null;
+        return currentNode.data;
     }
 
     @Override
