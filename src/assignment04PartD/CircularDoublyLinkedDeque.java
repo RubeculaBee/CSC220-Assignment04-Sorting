@@ -97,7 +97,7 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
     @Override
     public void clear() 
     {
-        // TODO Auto-generated method stub
+        firstnode = null;
     }
 
     private class DoublyLinkedNode 
