@@ -45,7 +45,9 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
         currentnode.prev = new DoublyLinkedNode(newEntry, null, currentnode);
     }
 
-    @Override
+    @Override// TODO Auto-generated method stub
+
+        return null;
     public T removeFront() 
     {
         // TODO Auto-generated method stub
@@ -80,9 +82,7 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
     @Override
     public boolean isEmpty() 
     {
-        // TODO Auto-generated method stub
-
-        return true;
+        return firstnode == null;
     }
 
     @Override
