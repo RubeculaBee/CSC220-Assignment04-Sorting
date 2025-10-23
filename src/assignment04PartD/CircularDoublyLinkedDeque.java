@@ -40,40 +40,49 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
         
         DoublyLinkedNode currentnode = firstnode;
         while(currentnode.prev != null)
-            currentnode = currentnode.next;
+            currentnode = currentnode.prev;
         
         currentnode.prev = new DoublyLinkedNode(newEntry, null, currentnode);
     }
 
-    @Override// TODO Auto-generated method stub
-
-        return null;
-    public T removeFront() 
+    public T removeFront() throws EmptyQueueException
     {
+        if(isEmpty())
+            throw new EmptyQueueException();
+        
         // TODO Auto-generated method stub
 
         return null;
     }
 
     @Override
-    public T removeBack() 
+    public T removeBack() throws EmptyQueueException
     {
+        if(isEmpty())
+            throw new EmptyQueueException();
+        
         // TODO Auto-generated method stub
 
         return null;
     }
 
     @Override
-    public T getFront() 
+    public T getFront() throws EmptyQueueException
     {
+        if(isEmpty())
+            throw new EmptyQueueException();
+        
         // TODO Auto-generated method stub
 
         return null;
     }
 
     @Override
-    public T getBack() 
+    public T getBack() throws EmptyQueueException
     {
+        if(isEmpty())
+            throw new EmptyQueueException();
+        
         // TODO Auto-generated method stub
 
         return null;
