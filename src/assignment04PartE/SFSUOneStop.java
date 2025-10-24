@@ -14,7 +14,7 @@ public class SFSUOneStop
     {
         System.out.printf("Priority: %s%s\n", priority, priority=="realistic"? " (provided by supervisors)" : "");
         
-        for(Student student : (Student[]) pq.toArray())
+        for(Object student : pq.toArray())
             System.out.println(student);
         
         System.out.print("\n");
