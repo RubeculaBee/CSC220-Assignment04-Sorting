@@ -49,4 +49,10 @@ public final class Student implements Comparable<Student>
 
         return 0;
     }
+
+    @Override
+    public String toString()
+    {
+        return String.format("%-10s%-10s%-10d%-3.2f%9d%8d", firstName, lastName, id, gpa, numSmallQuestions, numLargeQuestions);
+    }
 }
