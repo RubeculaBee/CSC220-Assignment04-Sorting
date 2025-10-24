@@ -1,5 +1,7 @@
 package assignment04PartE;
 
+import java.security.InvalidParameterException;
+
 /**
  *
  * Part E
@@ -8,14 +10,9 @@ package assignment04PartE;
 
 public final class Student implements Comparable<Student>
 {
-    private String firstName;
-    private String lastName;
-    private int id;
-    private double gpa;
-    private int numSmallQuestions;
-    private int numLargeQuestions;
+    private Comparable[] attributes;
 
-    static private String currentPriority;
+    static private int currentPriorityIndex;
     static private String[] priorities = 
     {
         "realistic", 
@@ -30,17 +27,24 @@ public final class Student implements Comparable<Student>
 
     public Student (String firstName, String lastName, int id, double gpa, int numSmallQuestions, int numLargeQuestions)
     {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.id = id;
-        this.gpa = gpa;
-        this.numSmallQuestions = numSmallQuestions;
-        this.numLargeQuestions =numLargeQuestions;
+        attributes = new Comparable[] {firstName, lastName, id, gpa, numSmallQuestions, numLargeQuestions};
     }
 
     static public String[] getPriorities() {return priorities;}
 
-    static public void setCompareToPriority(String priority) {currentPriority = priority;}
+    static public void setCompareToPriority(String priority) throws InvalidParameterException
+    {
+        for(int i = 0; i < priorities.length; i++)
+            if(priority == priorities[i])
+            {
+                currentPriorityIndex = i;
+                return;
+            }
+
+
+        // If the requested priority isn't in the list, throw an exception
+        throw new InvalidParameterException();
+    }
 
     @Override
     public int compareTo(Student student)
@@ -53,6 +57,6 @@ public final class Student implements Comparable<Student>
     @Override
     public String toString()
     {
-        return String.format("%-10s%-10s%-10d%-3.2f%9d%8d", firstName, lastName, id, gpa, numSmallQuestions, numLargeQuestions);
+        return String.format("%-10s%-10s%-10d%-3.2f%9d%8d", attributes);
     }
 }
