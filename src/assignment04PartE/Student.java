@@ -1,6 +1,7 @@
 package assignment04PartE;
 
 import java.security.InvalidParameterException;
+import java.util.Arrays;
 
 /**
  *
@@ -12,22 +13,24 @@ public final class Student implements Comparable<Student>
 {
     private Comparable[] attributes;
 
+    static private int numStudents = 0;
     static private int currentPriorityIndex;
     static private String[] priorities = 
     {
-        "realistic", 
-        "first-name", 
-        "last-name", 
-        "student-id", 
-        "gpa", 
-        "number-of-small-questions",
-        "number-of-big-questions",
-        "number-of-small-and-big-questions"
+        "realistic",                        //0
+        "first-name",                       //1
+        "last-name",                        //2
+        "student-id",                       //3
+        "gpa",                              //4
+        "number-of-small-questions",        //5
+        "number-of-big-questions",          //6
+        "number-of-small-and-big-questions" //7
     };
 
     public Student (String firstName, String lastName, int id, double gpa, int numSmallQuestions, int numLargeQuestions)
     {
-        attributes = new Comparable[] {firstName, lastName, id, gpa, numSmallQuestions, numLargeQuestions};
+        attributes = new Comparable[] {numStudents, firstName, lastName, id, gpa, numSmallQuestions, numLargeQuestions, numSmallQuestions + numLargeQuestions};
+        numStudents++;
     }
 
     static public String[] getPriorities() {return priorities;}
@@ -35,7 +38,7 @@ public final class Student implements Comparable<Student>
     static public void setCompareToPriority(String priority) throws InvalidParameterException
     {
         for(int i = 0; i < priorities.length; i++)
-            if(priority == priorities[i])
+            if(priority.equals(priorities[i]))
             {
                 currentPriorityIndex = i;
                 return;
@@ -49,14 +52,24 @@ public final class Student implements Comparable<Student>
     @Override
     public int compareTo(Student student)
     {
-        //TODO Implement compareTo
+        return compareAttribute(currentPriorityIndex, student);
+    }
 
-        return 0;
+    private int compareAttribute(int priority, Student student)
+    {
+        assert priority >= 0 && priority < priorities.length;
+
+        int result = this.attributes[priority].compareTo(student.attributes[priority]);
+
+        if(result == 0)
+            return compareAttribute(priority-1, student);
+
+        return result;
     }
 
     @Override
     public String toString()
     {
-        return String.format("%-10s%-10s%-10d%-3.2f%9d%8d", attributes);
+        return String.format("%-10s%-10s%-10d%-3.2f%9d%8d", Arrays.copyOfRange(attributes, 1, 7));
     }
 }
