@@ -13,7 +13,6 @@ public final class Student implements Comparable<Student>
 {
     private Comparable[] attributes;
 
-    static private int numStudents = 0;
     static private int currentPriorityIndex;
     static private String[] priorities = 
     {
@@ -29,8 +28,7 @@ public final class Student implements Comparable<Student>
 
     public Student (String firstName, String lastName, int id, double gpa, int numSmallQuestions, int numLargeQuestions)
     {
-        attributes = new Comparable[] {numStudents, firstName, lastName, id, gpa, numSmallQuestions, numLargeQuestions, numSmallQuestions + numLargeQuestions};
-        numStudents++;
+        attributes = new Comparable[] {lastName.charAt(lastName.length()-1), firstName, lastName, id, gpa, numSmallQuestions, numLargeQuestions, numSmallQuestions + numLargeQuestions};
     }
 
     static public String[] getPriorities() {return priorities;}
@@ -55,14 +53,15 @@ public final class Student implements Comparable<Student>
         return compareAttribute(currentPriorityIndex, student);
     }
 
-    private int compareAttribute(int priority, Student student)
+    private int compareAttribute(int priorityIndex, Student student)
     {
-        assert priority >= 0 && priority < priorities.length;
-
-        int result = this.attributes[priority].compareTo(student.attributes[priority]);
+        int result = this.attributes[priorityIndex].compareTo(student.attributes[priorityIndex]);
 
         if(result == 0)
-            return compareAttribute(priority-1, student);
+            if(priorityIndex == 0)
+                return compareAttribute((((String) attributes[2]).length() % 3) + 1, student);
+            else
+                return compareAttribute(priorityIndex-1, student);
 
         return result;
     }
