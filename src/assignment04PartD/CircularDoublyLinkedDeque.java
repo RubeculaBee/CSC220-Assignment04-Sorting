@@ -16,88 +16,36 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
     @Override
     public void addToFront(T newEntry) 
     {
-        if(firstnode == null)
-        {
-            firstnode = new DoublyLinkedNode(newEntry);
-            return;
-        }
-
-        DoublyLinkedNode currentnode = firstnode;
-        while(currentnode.next != null)
-            currentnode = currentnode.next;
-        
-        currentnode.next = new DoublyLinkedNode(newEntry, currentnode, null);
+        //TODO: Reimplement
     }
 
     @Override
     public void addToBack(T newEntry) 
     {
-        if(firstnode == null)
-        {
-            firstnode = new DoublyLinkedNode(newEntry);
-            return;
-        }
-        
-        DoublyLinkedNode currentnode = firstnode;
-        while(currentnode.prev != null)
-            currentnode = currentnode.prev;
-        
-        currentnode.prev = new DoublyLinkedNode(newEntry, null, currentnode);
+        //TODO: Reimplement
     }
-
+    
     public T removeFront() throws EmptyQueueException
     {
-        if(isEmpty())
-            throw new EmptyQueueException();
-        
-        DoublyLinkedNode currentNode = firstnode;
-        while(currentNode.next != null)
-            currentNode = currentNode.next;
-
-        currentNode.prev.next = null;
-
-        return currentNode.data;
+        //TODO: Reimplement
     }
 
     @Override
     public T removeBack() throws EmptyQueueException
     {
-        if(isEmpty())
-            throw new EmptyQueueException();
-        
-        DoublyLinkedNode currentNode = firstnode;
-        while(currentNode.prev != null)
-            currentNode = currentNode.prev;
-
-        currentNode.next.prev = null;
-
-        return currentNode.data;
+        //TODO: Reimplement
     }
 
     @Override
     public T getFront() throws EmptyQueueException
     {
-        if(isEmpty())
-            throw new EmptyQueueException();
-        
-        DoublyLinkedNode currentNode = firstnode;
-        while(currentNode.next != null)
-            currentNode = currentNode.next;
-
-        return currentNode.data;
+        //TODO: Reimplement
     }
 
     @Override
     public T getBack() throws EmptyQueueException
     {
-        if(isEmpty())
-            throw new EmptyQueueException();
-        
-        DoublyLinkedNode currentNode = firstnode;
-        while(currentNode.prev != null)
-            currentNode = currentNode.prev;
-
-        return currentNode.data;
+        //TODO: Reimplement
     }
 
     @Override
