@@ -37,25 +37,33 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
 
     public T removeFront() throws EmptyQueueException
     {
-        //TODO: Reimplement
+        if(isEmpty())
+            throw new EmptyQueueException();
     }
 
     @Override
     public T removeBack() throws EmptyQueueException
     {
-        //TODO: Reimplement
+        if(isEmpty())
+            throw new EmptyQueueException();
     }
 
     @Override
     public T getFront() throws EmptyQueueException
     {
-        //TODO: Reimplement
+        if(isEmpty())
+            throw new EmptyQueueException();
+        
+        return firstnode.data;
     }
 
     @Override
     public T getBack() throws EmptyQueueException
     {
-        //TODO: Reimplement
+        if(isEmpty())
+            throw new EmptyQueueException();
+        
+        return firstnode.prev.data;
     }
 
     @Override
