@@ -16,13 +16,23 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
     @Override
     public void addToFront(T newEntry) 
     {
-        //TODO: Reimplement
+        addToBack(newEntry);
+        
+        firstnode = firstnode.prev; 
     }
 
     @Override
     public void addToBack(T newEntry) 
     {
-        //TODO: Reimplement
+        if(firstnode == null)
+        {
+            firstnode = new DoublyLinkedNode(newEntry);
+            return;
+        }
+
+        DoublyLinkedNode newNode = new DoublyLinkedNode(newEntry, firstnode.prev, firstnode);
+        firstnode.prev.next = newNode;
+        firstnode.prev = newNode;
     }
 
     public T removeFront() throws EmptyQueueException
