@@ -39,6 +39,10 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
     {
         if(isEmpty())
             throw new EmptyQueueException();
+
+        firstnode = firstnode.next;
+
+        return removeBack();
     }
 
     @Override
@@ -46,6 +50,13 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
     {
         if(isEmpty())
             throw new EmptyQueueException();
+        
+        T data = firstnode.prev.data;
+
+        firstnode.prev = firstnode.prev.prev;
+        firstnode.prev.next = firstnode;
+
+        return data;
     }
 
     @Override
