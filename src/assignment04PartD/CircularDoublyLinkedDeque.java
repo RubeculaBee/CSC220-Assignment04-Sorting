@@ -24,7 +24,7 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
     {
         //TODO: Reimplement
     }
-    
+
     public T removeFront() throws EmptyQueueException
     {
         //TODO: Reimplement
@@ -68,7 +68,12 @@ public class CircularDoublyLinkedDeque<T> implements DequeInterface<T>
 
         private DoublyLinkedNode() {}
 
-        private DoublyLinkedNode(T data) {this.data = data;}
+        private DoublyLinkedNode(T data)
+        {
+            this.data = data;
+            this.prev = this;
+            this.next = this;
+        }
 
         private DoublyLinkedNode(T data, DoublyLinkedNode prev, DoublyLinkedNode next) 
         {
